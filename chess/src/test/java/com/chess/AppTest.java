@@ -1,6 +1,9 @@
 package com.chess;
 
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import com.chess.entities.ChessPiece;
+import com.chess.entities.Color;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.Test;
 
@@ -9,11 +12,15 @@ import org.junit.jupiter.api.Test;
  */
 public class AppTest {
 
-    /**
-     * Rigorous Test :-)
-     */
+    // won't work once ChessPiece becomes abstract
     @Test
-    public void shouldAnswerWithTrue() {
-        assertTrue(true);
+    void testInit() {
+        String message = "";
+        try {
+            new ChessPiece(0, 9, Color.WHITE);
+        } catch (IllegalArgumentException e) {
+            message = e.getMessage();
+        }
+        assertEquals("Out of bounds, positionX cannot be under 1 or above 8.", message);
     }
 }
