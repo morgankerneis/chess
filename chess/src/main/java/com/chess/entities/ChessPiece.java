@@ -1,6 +1,6 @@
 package com.chess.entities;
 
-public class ChessPiece {
+public abstract class ChessPiece {
     private int positionX;
     private int positionY;
     private Color color;
@@ -43,4 +43,20 @@ public class ChessPiece {
         this.color = color;
     }
 
+    /**
+     * Indicates if piece's coordinates are on the chessboard.
+     * 
+     * @param positionX
+     * @param positionY
+     * @return Boolean value depending on if piece is on chessboard.
+     */
+    public boolean isOnChessboard(int positionX, int positionY) {
+        return positionX >= 1 && positionX <= 8 && positionY >= 1 && positionY <= 8;
+    }
+
+    public abstract boolean canMoveTo(int positionX, int positionY);
+
+    public boolean canEat(ChessPiece piece) {
+        return canMoveTo(piece.getPositionX(), piece.getPositionY()) && this.getColor() != piece.getColor();
+    }
 }

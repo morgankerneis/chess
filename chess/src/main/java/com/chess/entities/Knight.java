@@ -5,9 +5,10 @@ public class Knight extends ChessPiece {
         super(positionX, positionY, color);
     }
 
+    @Override
     public boolean canMoveTo(int positionX, int positionY) {
         // Ensuring piece doesn't move out of allowed range
-        if (positionX < 1 || positionX > 8 || positionY < 1 || positionY > 8) {
+        if (!isOnChessboard(positionX, positionY)) {
             return false;
         }
 
@@ -16,4 +17,5 @@ public class Knight extends ChessPiece {
 
         return (xOffset == 2 && yOffset == 1) || (yOffset == 2 && xOffset == 1);
     }
+
 }

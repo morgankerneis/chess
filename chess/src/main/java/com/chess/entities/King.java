@@ -1,7 +1,7 @@
 package com.chess.entities;
 
-public class Bishop extends ChessPiece {
-    public Bishop(int positionX, int positionY, Color color) {
+public class King extends ChessPiece {
+    public King(int positionX, int positionY, Color color) {
         super(positionX, positionY, color);
     }
 
@@ -15,6 +15,6 @@ public class Bishop extends ChessPiece {
         int xOffset = Math.abs(this.getPositionX() - positionX);
         int yOffset = Math.abs(this.getPositionY() - positionY);
 
-        return xOffset == yOffset;
+        return xOffset <= 1 && yOffset <= 1;
     }
 }
