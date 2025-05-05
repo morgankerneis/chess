@@ -5,6 +5,9 @@ public abstract class ChessPiece {
     private int positionY;
     private Color color;
 
+    // ✅ Bons algos
+    // Pour le roi (mais ce n'est pas à faire) canEat sera revu car il y aura la
+    // condition de ne pas être mis en échec.
     public ChessPiece(int positionX, int positionY, Color color) {
         setPositionX(positionX);
         setPositionY(positionY);

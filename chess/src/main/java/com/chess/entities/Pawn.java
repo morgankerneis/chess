@@ -5,6 +5,8 @@ public class Pawn extends ChessPiece {
         super(positionX, positionY, color);
     }
 
+    // Il y a un histoire ici aussi de valeur absolue ou de couleur de pion car les
+    // noirs vont dans le sens inverse des blancs
     @Override
     public boolean canMoveTo(int positionX, int positionY) {
         // Ensuring piece doesn't move out of allowed range

@@ -5,6 +5,8 @@ public class King extends ChessPiece {
         super(positionX, positionY, color);
     }
 
+    // ✅ 👍
+    // Ce n'est pas à faire ici mais il pourra y avoir la condition d'echec
     @Override
     public boolean canMoveTo(int positionX, int positionY) {
         // Ensuring piece doesn't move out of allowed range

@@ -5,6 +5,7 @@ public class Bishop extends ChessPiece {
         super(positionX, positionY, color);
     }
 
+    // ✅ 👍
     @Override
     public boolean canMoveTo(int positionX, int positionY) {
         // Ensuring piece doesn't move out of allowed range
